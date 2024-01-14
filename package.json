@@ -1,19 +1,22 @@
 {
-  "name": "@uniswap/v3-sdk",
+  "name": "@offsetcarbon/v3-sdk",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
   "version": "3.10.0",
-  "description": "⚒️ An SDK for building applications on top of Uniswap V3",
+  "description": "⚒️ An SDK for building applications on top of Offset V3",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "repository": "https://github.com/Uniswap/uniswap-v3-sdk.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/offset-labs/v3-sdk.git"
+  },
   "keywords": [
-    "uniswap",
+    "offset",
     "ethereum"
   ],
   "module": "dist/v3-sdk.esm.js",
@@ -26,7 +29,7 @@
   "dependencies": {
     "@ethersproject/abi": "^5.0.12",
     "@ethersproject/solidity": "^5.0.9",
-    "@uniswap/sdk-core": "^4",
+    "@offsetcarbon/sdk-core": "^4.0.11",
     "@uniswap/swap-router-contracts": "^1.2.1",
     "@uniswap/v3-periphery": "^1.1.1",
     "@uniswap/v3-staker": "1.0.0",
@@ -35,7 +38,7 @@
   },
   "devDependencies": {
     "@types/jest": "^24.0.25",
-    "@uniswap/v3-core": "1.0.0",
+    "@offsetcarbon/v3-core": "4.0.11",
     "tsdx": "^0.14.1"
   },
   "engines": {
@@ -45,5 +48,10 @@
     "printWidth": 120,
     "semi": false,
     "singleQuote": true
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/offset-labs/v3-sdk/issues"
+  },
+  "homepage": "https://github.com/offset-labs/v3-sdk#readme",
+  "author": "Offset Labs"
 }
