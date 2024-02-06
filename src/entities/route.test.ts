@@ -1,4 +1,4 @@
-import { Ether, Token, WETH9 } from '@uniswap/sdk-core'
+import { Ether, Token, WETH9 } from '@offsetcarbon/sdk-core'
 import { FeeAmount } from '../constants'
 import { encodeSqrtRatioX96 } from '../utils/encodeSqrtRatioX96'
 import { TickMath } from '../utils/tickMath'
@@ -6,11 +6,11 @@ import { Pool } from './pool'
 import { Route } from './route'
 
 describe('Route', () => {
-  const ETHER = Ether.onChain(1)
-  const token0 = new Token(1, '0x0000000000000000000000000000000000000001', 18, 't0')
-  const token1 = new Token(1, '0x0000000000000000000000000000000000000002', 18, 't1')
-  const token2 = new Token(1, '0x0000000000000000000000000000000000000003', 18, 't2')
-  const weth = WETH9[1]
+  const ETHER = Ether.onChain(421614)
+  const token0 = new Token(421614, '0x0000000000000000000000000000000000000001', 18, 't0')
+  const token1 = new Token(421614, '0x0000000000000000000000000000000000000002', 18, 't1')
+  const token2 = new Token(421614, '0x0000000000000000000000000000000000000003', 18, 't2')
+  const weth = WETH9[421614]
 
   const pool_0_1 = new Pool(token0, token1, FeeAmount.MEDIUM, encodeSqrtRatioX96(1, 1), 0, 0, [])
   const pool_0_weth = new Pool(token0, weth, FeeAmount.MEDIUM, encodeSqrtRatioX96(1, 1), 0, 0, [])
@@ -23,7 +23,7 @@ describe('Route', () => {
       expect(route.tokenPath).toEqual([token0, token1])
       expect(route.input).toEqual(token0)
       expect(route.output).toEqual(token1)
-      expect(route.chainId).toEqual(1)
+      expect(route.chainId).toEqual(421614)
     })
     it('should fail if the input is not in the first pool', () => {
       expect(() => new Route([pool_0_1], weth, token1)).toThrow()
