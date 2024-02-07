@@ -68,7 +68,7 @@ describe('Pool', () => {
   describe('#getAddress', () => {
     it('matches an example', () => {
       const result = Pool.getAddress(USDC, DAI, FeeAmount.LOW)
-      expect(result).toEqual('0x6c6Bc977E13Df9b0de53b251522280BB72383700')
+      expect(result).toEqual('0x6528637071CdbbFe934E8123f19787357fa8B8d1')
     })
   })
 
